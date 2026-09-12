@@ -17,6 +17,7 @@ substituem estas — não ajuste para um conjunto de dados específico.
 import math
 import time
 import torch
+#Douglas Ferreira Martins e Gullit Damião Teixeira de Campos
 
 DIM_MAX = 64
 SEMENTES = (0, 1, 2)
