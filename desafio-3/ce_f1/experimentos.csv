@@ -1,0 +1,4 @@
+run_id,opt,lr,lr_adamw,sched,seed,passos,lote,clip,wd,val_f1_macro,val_f1_micro,val_perda,divergiu,tempo_s
+muon_lr0.1_la0.001_warmup_cosseno_s0_p3000_b256_ce,muon,0.1,0.001,warmup_cosseno,0,3000,256,1.0,0.01,0.5669952630996704,0.8234623074531555,0.4372310930493723,False,39.9
+adam_lr0.003_constante_s0_p3000_b256_ce,adam,0.003,,constante,0,3000,256,1.0,0.0,0.5470030307769775,0.806239128112793,0.47208693430718723,False,21.0
+sgd_lr0.001_constante_s0_p3000_b256_ce,sgd,0.001,,constante,0,3000,256,1.0,0.0001,0.45476895570755005,0.7984830141067505,0.5203990007868416,False,21.8
