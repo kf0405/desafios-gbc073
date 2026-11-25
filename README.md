@@ -20,7 +20,7 @@ The UNSW-NB15 dataset was developed in 2015 by the Cyber Range Lab of the Austra
 
 ### Dataset preparation and partitioning
 
-The implementation uses the two predefined partitions provided by the UNSW-NB15 dataset, with 175,341 records in the training set and 82,332 records in the testing set. For the multiclass implementation, the attack_cat attribute is used as the target variable, whereas the binary implementation uses the label attribute to distinguish between normal and malicious traffic. In both cases, the remaining attributes are used as input features, excluding identifiers and redundant label information. The input consists of 42 features, comprising 39 numerical features and three categorical features: protocol (proto), service (service), and connection state (state). The original training partition is further divided into training and validation subsets using an 80/20 stratified split, resulting in 140,272 training records and 35,069 validation records. Stratification preserves the relative distribution of classes across the two subsets, allowing model training and validation under comparable class distributions. The predefined testing partition is kept separate from the training and validation procedures and is used for the final evaluation of the trained models.
+The implementation uses the two predefined partitions provided by the UNSW-NB15 dataset, with 175,341 records in the training set and 82,332 records in the testing set. For the multiclass implementation, the `attack_cat` attribute is used as the target variable, whereas the binary implementation uses the `label` attribute to distinguish between normal and malicious traffic. In both cases, the remaining attributes are used as input features, excluding identifiers and redundant label information. The input consists of 42 features, comprising 39 numerical features and three categorical features: protocol (`proto`), service (`service`), and connection state (`state`). The original training partition is further divided into training and validation subsets using an 80/20 stratified split, resulting in 140,272 training records and 35,069 validation records. Stratification preserves the relative distribution of classes across the two subsets, allowing model training and validation under comparable class distributions. The predefined testing partition is kept separate from the training and validation procedures and is used for the final evaluation of the trained models.
 
 ### Feature preprocessing
 1. Numerical features  
@@ -33,13 +33,13 @@ Categorical features require a different representation because their values rep
 
 3. Combining feature embeddings into tokens
 
-After the individual feature embeddings are generated, they are concatenated to form a sequence of 42 tokens, each represented by a 64-dimensional vector. An additional learned feature identity embedding is added to each token to explicitly encode the identity of its corresponding original attribute. Unlike conventional positional encodings used in language Transformers, these embeddings do not represent sequential positions, since network traffic features have no inherent ordering. Instead, they allow the model to distinguish between different attributes and learn their relationships through subsequent self-attention operations. The resulting representation has dimensions \(B \times 42 \times 64\), where \(B\) denotes the batch size.
+After the individual feature embeddings are generated, they are concatenated to form a sequence of 42 tokens, each represented by a 64-dimensional vector. An additional learned feature identity embedding is added to each token to explicitly encode the identity of its corresponding original attribute. Unlike conventional positional encodings used in language Transformers, these embeddings do not represent sequential positions, since network traffic features have no inherent ordering. Instead, they allow the model to distinguish between different attributes and learn their relationships through subsequent self-attention operations. The resulting representation has dimensions $B \times 42 \times 64$, where $B$ denotes the batch size.
 
 ### Transformer architecture
 
 1. Input representation  
 
-The preprocessed numerical and categorical features are converted into 64-dimensional embeddings, resulting in 42 feature tokens per network traffic record. Each of the 39 numerical features is independently mapped through a learned affine transformation, while the three categorical features use separate learned embedding tables. A learned feature identity embedding is then added to each token to explicitly represent its corresponding original attribute. Unlike conventional positional encodings, these embeddings identify features rather than sequential positions, since network traffic attributes have no inherent ordering. The resulting representation has dimensions \(B \times 42 \times 64\), where \(B\) denotes the batch size.
+The preprocessed numerical and categorical features are converted into 64-dimensional embeddings, resulting in 42 feature tokens per network traffic record. Each of the 39 numerical features is independently mapped through a learned affine transformation, while the three categorical features use separate learned embedding tables. A learned feature identity embedding is then added to each token to explicitly represent its corresponding original attribute. Unlike conventional positional encodings, these embeddings identify features rather than sequential positions, since network traffic attributes have no inherent ordering. The resulting representation has dimensions $B \times 42 \times 64$, where $B$ denotes the batch size.
 
 2. Self attention  
 
@@ -65,7 +65,7 @@ The numerical tokenization strategy was selected independently for each classifi
 
 ### Training configuration  
 
-Both models are trained using the AdamW optimizer, with an initial learning rate of \(10^{-3}\) and a weight decay of \(10^{-4}\). A batch size of 256 is used during training, while validation and testing use batches of 512 records. The binary model is trained for up to 10 epochs using Binary Cross-Entropy with Logits Loss (BCEWithLogitsLoss), incorporating a positive-class weight to account for class imbalance. The multiclass model is trained for up to 20 epochs using weighted Cross-Entropy Loss, with class weights derived from the training-set class distribution. Additionally, a cosine annealing learning-rate scheduler is employed in the multiclass experiment, gradually reducing the learning rate from \(10^{-3}\) to \(10^{-5}\) throughout training.
+Both models are trained using the AdamW optimizer, with an initial learning rate of $10^{-3}$ and a weight decay of $10^{-4}$. A batch size of 256 is used during training, while validation and testing use batches of 512 records. The binary model is trained for up to 10 epochs using Binary Cross-Entropy with Logits Loss (`BCEWithLogitsLoss`), incorporating a positive-class weight to account for class imbalance. The multiclass model is trained for up to 20 epochs using weighted Cross-Entropy Loss, with class weights derived from the training-set class distribution. Additionally, a cosine annealing learning-rate scheduler is employed in the multiclass experiment, gradually reducing the learning rate from $10^{-3}$ to $10^{-5}$ throughout training.
 
 In both experiments, model performance is evaluated after each epoch using the validation set. Macro-averaged F1-score is used as the primary selection metric, and the model weights corresponding to the highest validation score are retained for final evaluation. This checkpoint selection strategy prioritizes balanced performance across classes rather than allowing majority classes to dominate the evaluation metric.
 
@@ -74,6 +74,7 @@ In the binary experiment, the model produces a single logit for each input recor
 In the multiclass experiment, an additional post-processing strategy is employed to improve the recognition of minority attack categories. After training, class-specific logit offsets are estimated using five-fold stratified cross-validation on the validation predictions. These offsets are added to the model's original logits before the final class prediction is obtained through the argmax operation. By adjusting the relative scores assigned to different categories, this procedure aims to reduce the tendency of the classifier to favor more frequent classes. The resulting offsets are then applied to both validation and test predictions.
 
 Accuracy and macro-averaged F1-score are emphasized according to the classification task. For binary classification, accuracy is the primary metric, while macro-F1 and ROC-AUC provide additional insight into class balance and discrimination performance. For multiclass classification, macro-F1 is the primary metric because it gives equal importance to all attack categories, regardless of their frequency. Accuracy and weighted-F1 are also reported to provide complementary measures of overall predictive performance.
+
 ## Results
 
 ### Overall performance comparison
@@ -87,49 +88,47 @@ The binary and multiclass Transformer models were evaluated on both the stratifi
 
 ![Binary vs. Multiclass Overview](final/outputs/comparison_overview.png)
 
-
 ### Binary classification results
 
 1. **Training dynamics**  
-   Using the linear numerical tokenizer and weighted `BCEWithLogitsLoss`, the binary model converges rapidly, reaching its peak validation macro-F1 of **0.938** at **Epoch 3** before validation loss begins to fluctuate slightly[cite: 4, 5]. Selecting the Epoch 3 checkpoint prevents overfitting while preserving strong generalization[cite: 4].
+   Using the linear numerical tokenizer and weighted `BCEWithLogitsLoss`, the binary model converges rapidly, reaching its peak validation macro-F1 of **0.938** at **Epoch 3** before validation loss begins to fluctuate slightly. Selecting the Epoch 3 checkpoint prevents overfitting while preserving strong generalization.
 
 ![Binary Training Curves](final/outputs/binary/binary_training_curves.png)
 
 2. **Threshold optimization and error analysis**  
-   Validation threshold tuning selected an optimal decision threshold of **0.39** (rather than the default 0.50) to maximize macro-F1[cite: 3].
-   * **Validation set:** The model correctly identifies **96.7%** of malicious traffic (23,091 / 23,869) and **90.2%** of normal traffic (10,105 / 11,200).
-   * **Test set:** Generalization to the unseen test partition yields a strong ROC-AUC of **0.9834**, a macro-F1 of **0.8705**, and an exceptionally high attack recall of **98.7%** (44,722 / 45,332 attacks detected, missing only 610 attack records)[cite: 3, 5]. However, the lower threshold shifts the precision-recall trade-off on the test distribution, resulting in **25.9%** of normal traffic (9,583 / 37,000) being flagged as false positives[cite: 3]. In network intrusion detection, this trade-off favors minimizing missed intrusions (false negatives) at the cost of higher alert volume.
+   Validation threshold tuning selected an optimal decision threshold of **0.39** (rather than the default 0.50) to maximize macro-F1.
+   - **Validation set:** The model correctly identifies **96.7%** of malicious traffic (23,091 / 23,869) and **90.2%** of normal traffic (10,105 / 11,200).
+   - **Test set:** Generalization to the unseen test partition yields a strong ROC-AUC of **0.9834**, a macro-F1 of **0.8705**, and an exceptionally high attack recall of **98.7%** (44,722 / 45,332 attacks detected, missing only 610 attack records). However, the lower threshold shifts the precision-recall trade-off on the test distribution, resulting in **25.9%** of normal traffic (9,583 / 37,000) being flagged as false positives. In network intrusion detection, this trade-off favors minimizing missed intrusions (false negatives) at the cost of higher alert volume.
 
 ![Binary Confusion Matrices](final/outputs/binary/binary_confusion_matrices.png)
 
 ### Multiclass classification results  
 
 1. **Training dynamics**  
-   With the Periodic-Linear-ReLU (PLR) numerical tokenizer, class-weighted Cross-Entropy loss, and cosine annealing learning-rate schedule, the multiclass model exhibits steady convergence over 20 epochs[cite: 2]. Training loss decreases smoothly from ~0.69 to ~0.46, while validation loss plateaus around ~0.51[cite: 2]. Validation macro-F1 peaks at **Epoch 16** (**0.657** pre-tuning; **0.666** after 5-fold cross-validated logit offset adjustment), after which training F1 continues rising without validation gains[cite: 2, 5].
+   With the Periodic-Linear-ReLU (PLR) numerical tokenizer, class-weighted Cross-Entropy loss, and cosine annealing learning-rate schedule, the multiclass model exhibits steady convergence over 20 epochs. Training loss decreases smoothly from ~0.69 to ~0.46, while validation loss plateaus around ~0.51. Validation macro-F1 peaks at **Epoch 16** (**0.657** pre-tuning; **0.666** after 5-fold cross-validated logit offset adjustment), after which training F1 continues rising without validation gains.
 
 ![Multiclass Training Curves](final/outputs/multiclass/multiclass_training_curves.png)
 
 2. **Per-class performance and confusion patterns**  
-   On the test set, the multiclass model achieves **73.4%** accuracy, **0.771** weighted-F1, and **0.5241** macro-F1[cite: 5]. The gap between weighted-F1 and macro-F1 highlights uneven performance across frequent versus minority or overlapping attack classes[cite: 1, 5]:
-   * **High-recall categories:** `Generic` (**97.2%**), `Shellcode` (**83.1%**), `Reconnaissance` (**80.0%**), `Worms` (**75.0%**), and `Exploits` (**68.2%**) are reliably identified on the test set[cite: 1]. Notably, the PLR tokenizer and logit-offset tuning allow the model to recover rare categories such as `Worms` (33 / 44 test records) and `Shellcode` (314 / 378 test records) despite extreme class scarcity[cite: 1].
-   * **Primary confusion clusters:**
-     * **DoS / Analysis / Backdoor overlap:** `Analysis` (1.8% test recall) and `Backdoor` (19.2% test recall) are heavily misclassified as `DoS` (59.4% and 53.5%, respectively) and `Exploits` (10.9% and 12.0%)[cite: 1]. Similarly, `DoS` traffic is frequently confused with `Exploits` (24.5%) and `Backdoor` (18.7%)[cite: 1]. These categories share similar volumetric and protocol-level flow characteristics in UNSW-NB15, making fine-grained separation difficult from flow features alone.
-     * **Normal vs. Fuzzers boundary:** On the test set, **68.9%** of `Normal` traffic is correctly classified, while **24.7%** (9,150 records) is misclassified as `Fuzzers`[cite: 1]. Because fuzzing attacks send malformed or semi-valid inputs that closely resemble legitimate protocol interactions, the logit-offset boost applied to improve minority attack recall increases false-positive spillover from `Normal` into `Fuzzers`[cite: 1].
+   On the test set, the multiclass model achieves **73.4%** accuracy, **0.771** weighted-F1, and **0.5241** macro-F1. The gap between weighted-F1 and macro-F1 highlights uneven performance across frequent versus minority or overlapping attack classes:
+   - **High-recall categories:** `Generic` (**97.2%**), `Shellcode` (**83.1%**), `Reconnaissance` (**80.0%**), `Worms` (**75.0%**), and `Exploits` (**68.2%**) are reliably identified on the test set. Notably, the PLR tokenizer and logit-offset tuning allow the model to recover rare categories such as `Worms` (33 / 44 test records) and `Shellcode` (314 / 378 test records) despite extreme class scarcity.
+   - **Primary confusion clusters:**
+     - **DoS / Analysis / Backdoor overlap:** `Analysis` (1.8% test recall) and `Backdoor` (19.2% test recall) are heavily misclassified as `DoS` (59.4% and 53.5%, respectively) and `Exploits` (10.9% and 12.0%). Similarly, `DoS` traffic is frequently confused with `Exploits` (24.5%) and `Backdoor` (18.7%). These categories share similar volumetric and protocol-level flow characteristics in UNSW-NB15, making fine-grained separation difficult from flow features alone.
+     - **Normal vs. Fuzzers boundary:** On the test set, **68.9%** of `Normal` traffic is correctly classified, while **24.7%** (9,150 records) is misclassified as `Fuzzers`. Because fuzzing attacks send malformed or semi-valid inputs that closely resemble legitimate protocol interactions, the logit-offset boost applied to improve minority attack recall increases false-positive spillover from `Normal` into `Fuzzers`.
 
 ![Multiclass Confusion Matrices](final/outputs/multiclass/multiclass_confusion_matrices.png)
 
-
 ### Summary of findings
 
-* Task-dependent numerical representations: Linear feature embeddings are sufficient and generalize better for binary intrusion detection, whereas periodic embeddings (PLR) provide the nonlinear resolution required to separate fine-grained multiclass attack signatures.
-* High detection sensitivity vs. fine-grained attribution: Combining binary detection (98.7% attack recall, 0.9834 ROC-AUC) with multiclass classification demonstrates a practical two-stage tradeoff: the Transformer reliably separates malicious traffic from normal activity, while multiclass attribution succeeds on distinct attack signatures (`Generic`, `Shellcode`, `Reconnaissance`, `Worms`) and encounters expected boundary overlap among behaviorally similar classes (`Analysis`, `Backdoor`, `DoS`, `Exploits`)[cite: 1, 3, 5].
+- **Task-dependent numerical representations:** Linear feature embeddings are sufficient and generalize better for binary intrusion detection, whereas periodic embeddings (PLR) provide the nonlinear resolution required to separate fine-grained multiclass attack signatures.
+- **High detection sensitivity vs. fine-grained attribution:** Combining binary detection (98.7% attack recall, 0.9834 ROC-AUC) with multiclass classification demonstrates a practical two-stage tradeoff: the Transformer reliably separates malicious traffic from normal activity, while multiclass attribution succeeds on distinct attack signatures (`Generic`, `Shellcode`, `Reconnaissance`, `Worms`) and encounters expected boundary overlap among behaviorally similar classes (`Analysis`, `Backdoor`, `DoS`, `Exploits`).
 
 ### Future work
 1. **Hierarchical two-stage classification**  
-   Instead of treating binary and multiclass detection as completely isolated pipelines, a two-stage hierarchical architecture could first filter traffic using the high-recall binary Transformer (`98.7%` attack recall) and route only flagged records to a specialized 9-class attack classifier[cite: 3]. Removing the dominant `Normal` class from the second stage would eliminate `Normal`–`Fuzzers` confusion and allow the multiclass encoder to focus exclusively on separating attack signatures[cite: 1].
+   Instead of treating binary and multiclass detection as completely isolated pipelines, a two-stage hierarchical architecture could first filter traffic using the high-recall binary Transformer (`98.7%` attack recall) and route only flagged records to a specialized 9-class attack classifier. Removing the dominant `Normal` class from the second stage would eliminate `Normal`–`Fuzzers` confusion and allow the multiclass encoder to focus exclusively on separating attack signatures.
 
 2. **Loss functions for hard-to-separate minority classes**  
-   Replacing standard class-weighted Cross-Entropy with Focal Loss or Label-Distribution-Aware Margin (LDAM) loss could encourage wider decision margins around overlapping minority classes (`Analysis`, `Backdoor`, and `Worms`) during training, reducing reliance on aggressive post-hoc logit offsets[cite: 1].
+   Replacing standard class-weighted Cross-Entropy with Focal Loss or Label-Distribution-Aware Margin (LDAM) loss could encourage wider decision margins around overlapping minority classes (`Analysis`, `Backdoor`, and `Worms`) during training, reducing reliance on aggressive post-hoc logit offsets.
 
 3. **Temporal and session-level modeling**  
    Extending the feature-token Transformer to incorporate sequences of consecutive flows grouped by source/destination IP and time window would enable the model to capture multi-packet attack patterns—such as slow reconnaissance scans, persistent backdoor beaconing, and sustained DoS bursts—that are ambiguous in isolated flow records.
