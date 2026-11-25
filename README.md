@@ -85,7 +85,7 @@ The binary and multiclass Transformer models were evaluated on both the stratifi
 | **Binary Transformer** (Linear + BCE, $\text{th}=0.39$) | 3 | 0.938 | 0.8705 | 0.8731 | 0.8762 | 0.9834 |
 | **Multiclass Transformer** (PLR + Cosine + Weighted CE + CV Offsets) | 16 | 0.666 | 0.5241 | 0.7710 | 0.7340 | — |
 
-![Binary vs. Multiclass Overview](final/outputs/comparison_overview.jpg)
+![Binary vs. Multiclass Overview](final/outputs/comparison_overview.png)
 
 
 ### Binary classification results
