@@ -1,0 +1,10 @@
+{
+  "version": "Multiclass Best (PLR + Cosine + Weighted CE)",
+  "best_epoch": 16,
+  "val_acc": 0.8160483618010208,
+  "val_macro_f1": 0.6660167998092003,
+  "test_acc": 0.7342831462857698,
+  "test_macro_f1_raw": 0.5212545688787429,
+  "test_macro_f1_tuned": 0.5240611537048784,
+  "test_weighted_f1": 0.7710613105272346
+}

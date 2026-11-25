@@ -1,0 +1,38 @@
+{
+ "mnist_L4|f=1.0|e=3|dev=cpu": {
+  "baseline": 0.9635999798774719,
+  "referencia": 0.9638000130653381
+ },
+ "mnist_L16|f=1.0|e=3|dev=cpu": {
+  "baseline": 0.11349999904632568,
+  "referencia": 0.954800009727478
+ },
+ "mnist_L48|f=1.0|e=3|dev=cpu": {
+  "baseline": 0.11349999904632568,
+  "referencia": 0.11349999904632568
+ },
+ "fashion_L4|f=1.0|e=3|dev=cpu": {
+  "baseline": 0.8702999949455261,
+  "referencia": 0.8689000010490417
+ },
+ "fashion_L16|f=1.0|e=3|dev=cpu": {
+  "baseline": 0.10000000149011612,
+  "referencia": 0.8507000207901001
+ },
+ "fashion_L48|f=1.0|e=3|dev=cpu": {
+  "baseline": 0.10000000149011612,
+  "referencia": 0.10000000149011612
+ },
+ "cifar10_L4|f=1.0|e=3|dev=cpu": {
+  "baseline": 0.43540000915527344,
+  "referencia": 0.45089998841285706
+ },
+ "cifar10_L16|f=1.0|e=3|dev=cpu": {
+  "baseline": 0.10000000149011612,
+  "referencia": 0.41350001096725464
+ },
+ "cifar10_L48|f=1.0|e=3|dev=cpu": {
+  "baseline": 0.10000000149011612,
+  "referencia": 0.2361000031232834
+ }
+}

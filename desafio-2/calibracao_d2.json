@@ -1,0 +1,110 @@
+{
+ "mnist_L4|f=1.0|e=3|dev=cpu": {
+  "baseline": 0.9635999798774719,
+  "referencia": 0.9638000130653381
+ },
+ "mnist_L16|f=1.0|e=3|dev=cpu": {
+  "baseline": 0.11349999904632568,
+  "referencia": 0.954800009727478
+ },
+ "mnist_L48|f=1.0|e=3|dev=cpu": {
+  "baseline": 0.11349999904632568,
+  "referencia": 0.11349999904632568
+ },
+ "fashion_L4|f=1.0|e=3|dev=cpu": {
+  "baseline": 0.8702999949455261,
+  "referencia": 0.8689000010490417
+ },
+ "fashion_L16|f=1.0|e=3|dev=cpu": {
+  "baseline": 0.10000000149011612,
+  "referencia": 0.8507000207901001
+ },
+ "fashion_L48|f=1.0|e=3|dev=cpu": {
+  "baseline": 0.10000000149011612,
+  "referencia": 0.10000000149011612
+ },
+ "cifar10_L4|f=1.0|e=3|dev=cpu": {
+  "baseline": 0.43540000915527344,
+  "referencia": 0.45089998841285706
+ },
+ "cifar10_L16|f=1.0|e=3|dev=cpu": {
+  "baseline": 0.10000000149011612,
+  "referencia": 0.41350001096725464
+ },
+ "cifar10_L48|f=1.0|e=3|dev=cpu": {
+  "baseline": 0.10000000149011612,
+  "referencia": 0.2361000031232834
+ },
+ "mnist_L4|f=0.1|e=1|dev=cpu": {
+  "baseline": 0.8759999871253967,
+  "referencia": 0.8899999856948853
+ },
+ "mnist_L16|f=0.1|e=1|dev=cpu": {
+  "baseline": 0.12600000202655792,
+  "referencia": 0.2619999945163727
+ },
+ "mnist_L48|f=0.1|e=1|dev=cpu": {
+  "baseline": 0.12600000202655792,
+  "referencia": 0.12600000202655792
+ },
+ "fashion_L4|f=0.1|e=1|dev=cpu": {
+  "baseline": 0.7649999856948853,
+  "referencia": 0.8080000281333923
+ },
+ "fashion_L16|f=0.1|e=1|dev=cpu": {
+  "baseline": 0.0949999988079071,
+  "referencia": 0.36500000953674316
+ },
+ "fashion_L48|f=0.1|e=1|dev=cpu": {
+  "baseline": 0.0949999988079071,
+  "referencia": 0.10000000149011612
+ },
+ "cifar10_L4|f=0.1|e=1|dev=cpu": {
+  "baseline": 0.3400000035762787,
+  "referencia": 0.24899999797344208
+ },
+ "cifar10_L16|f=0.1|e=1|dev=cpu": {
+  "baseline": 0.10000000149011612,
+  "referencia": 0.17800000309944153
+ },
+ "cifar10_L48|f=0.1|e=1|dev=cpu": {
+  "baseline": 0.10000000149011612,
+  "referencia": 0.09000000357627869
+ },
+ "mnist_L4|f=0.25|e=1|dev=cpu": {
+  "baseline": 0.8903999924659729,
+  "referencia": 0.9175999760627747
+ },
+ "mnist_L16|f=0.25|e=1|dev=cpu": {
+  "baseline": 0.11479999870061874,
+  "referencia": 0.692799985408783
+ },
+ "mnist_L48|f=0.25|e=1|dev=cpu": {
+  "baseline": 0.11479999870061874,
+  "referencia": 0.11479999870061874
+ },
+ "fashion_L4|f=0.25|e=1|dev=cpu": {
+  "baseline": 0.8223999738693237,
+  "referencia": 0.8339999914169312
+ },
+ "fashion_L16|f=0.25|e=1|dev=cpu": {
+  "baseline": 0.09640000015497208,
+  "referencia": 0.27079999446868896
+ },
+ "fashion_L48|f=0.25|e=1|dev=cpu": {
+  "baseline": 0.09640000015497208,
+  "referencia": 0.10000000149011612
+ },
+ "cifar10_L4|f=0.25|e=1|dev=cpu": {
+  "baseline": 0.376800000667572,
+  "referencia": 0.3463999927043915
+ },
+ "cifar10_L16|f=0.25|e=1|dev=cpu": {
+  "baseline": 0.09679999947547913,
+  "referencia": 0.2524000108242035
+ },
+ "cifar10_L48|f=0.25|e=1|dev=cpu": {
+  "baseline": 0.09679999947547913,
+  "referencia": 0.09679999947547913
+ }
+}

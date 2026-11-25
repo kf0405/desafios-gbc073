@@ -1,0 +1,764 @@
+[
+  {
+    "score": 63.319719433784485,
+    "min_s": 0.0,
+    "mean_s": 0.9045555555555556,
+    "tempo_s": 281.1863006000058,
+    "tipo": "leaky_external",
+    "a": 0.08,
+    "modo": "orthogonal",
+    "hidden_gamma": 0.9,
+    "logit_scale": 0.5,
+    "e_f2": 0.5032,
+    "activation_gain": 1.0,
+    "weight_gain": 1.4097096860865024,
+    "media_dataset": {
+      "mnist": 0.6747333333333333,
+      "fashion": 0.6107333333333334,
+      "cifar10": 0.40406666666666663
+    },
+    "media_L": {
+      "4": 0.7736000000000001,
+      "16": 0.7570333333333333,
+      "48": 0.1589
+    },
+    "acc_tarefas": {
+      "mnist_L4": 0.9655,
+      "mnist_L16": 0.9587,
+      "mnist_L48": 0.1,
+      "fashion_L4": 0.8722,
+      "fashion_L16": 0.86,
+      "fashion_L48": 0.1,
+      "cifar10_L4": 0.4831,
+      "cifar10_L16": 0.4524,
+      "cifar10_L48": 0.2767
+    },
+    "linhas": [
+      {
+        "tarefa": "mnist_L4",
+        "oculta": false,
+        "acc": 0.9655,
+        "baseline": 0.9636,
+        "referencia": 0.9638,
+        "s_t": 1.25,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.7 1.1 0.27 | ‖grad W‖: 1.2 0.74 1.3",
+        "erro": null
+      },
+      {
+        "tarefa": "mnist_L16",
+        "oculta": false,
+        "acc": 0.9587,
+        "baseline": 0.1135,
+        "referencia": 0.9548,
+        "s_t": 1.005,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.6 0.37 0.032 | ‖grad W‖: 0.33 0.21 0.39",
+        "erro": null
+      },
+      {
+        "tarefa": "mnist_L48",
+        "oculta": false,
+        "acc": 0.1,
+        "baseline": 0.1135,
+        "referencia": 0.1135,
+        "s_t": 0.0,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.7 0.014 1.2e-05 | ‖grad W‖: 0.012 0.0082 0.013",
+        "erro": null
+      },
+      {
+        "tarefa": "fashion_L4",
+        "oculta": false,
+        "acc": 0.8722,
+        "baseline": 0.8703,
+        "referencia": 0.8689,
+        "s_t": 1.25,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.5 1 0.24 | ‖grad W‖: 1.6 1 1.8",
+        "erro": null
+      },
+      {
+        "tarefa": "fashion_L16",
+        "oculta": false,
+        "acc": 0.86,
+        "baseline": 0.1,
+        "referencia": 0.8507,
+        "s_t": 1.012,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.5 0.36 0.031 | ‖grad W‖: 0.34 0.22 0.36",
+        "erro": null
+      },
+      {
+        "tarefa": "fashion_L48",
+        "oculta": false,
+        "acc": 0.1,
+        "baseline": 0.1,
+        "referencia": 0.1,
+        "s_t": 0.0,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.5 0.012 1e-05 | ‖grad W‖: 0.012 0.0075 0.0081",
+        "erro": null
+      },
+      {
+        "tarefa": "cifar10_L4",
+        "oculta": false,
+        "acc": 0.4831,
+        "baseline": 0.4354,
+        "referencia": 0.4509,
+        "s_t": 1.25,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.5 1.1 0.34 | ‖grad W‖: 2.1 0.73 1.4",
+        "erro": null
+      },
+      {
+        "tarefa": "cifar10_L16",
+        "oculta": false,
+        "acc": 0.4524,
+        "baseline": 0.1,
+        "referencia": 0.4135,
+        "s_t": 1.124,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.5 0.19 0.023 | ‖grad W‖: 0.59 0.15 0.3",
+        "erro": null
+      },
+      {
+        "tarefa": "cifar10_L48",
+        "oculta": false,
+        "acc": 0.2767,
+        "baseline": 0.1,
+        "referencia": 0.2361,
+        "s_t": 1.25,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.6 0.008 1.5e-05 | ‖grad W‖: 0.02 0.0054 0.009",
+        "erro": null
+      }
+    ]
+  },
+  {
+    "score": 60.7899010181427,
+    "min_s": 0.0,
+    "mean_s": 0.8684444444444445,
+    "tempo_s": 332.214221299997,
+    "tipo": "leaky_external",
+    "a": 0.08,
+    "modo": "orthogonal",
+    "hidden_gamma": 0.9,
+    "logit_scale": 0.4,
+    "e_f2": 0.5032,
+    "activation_gain": 1.0,
+    "weight_gain": 1.4097096860865024,
+    "media_dataset": {
+      "mnist": 0.6804,
+      "fashion": 0.6108333333333333,
+      "cifar10": 0.39396666666666663
+    },
+    "media_L": {
+      "4": 0.7780333333333332,
+      "16": 0.7589333333333333,
+      "48": 0.14823333333333333
+    },
+    "acc_tarefas": {
+      "mnist_L4": 0.9662,
+      "mnist_L16": 0.9615,
+      "mnist_L48": 0.1135,
+      "fashion_L4": 0.8715,
+      "fashion_L16": 0.861,
+      "fashion_L48": 0.1,
+      "cifar10_L4": 0.4964,
+      "cifar10_L16": 0.4543,
+      "cifar10_L48": 0.2312
+    },
+    "linhas": [
+      {
+        "tarefa": "mnist_L4",
+        "oculta": false,
+        "acc": 0.9662,
+        "baseline": 0.9636,
+        "referencia": 0.9638,
+        "s_t": 1.25,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.7 1.1 0.17 | ‖grad W‖: 0.99 0.59 1.3",
+        "erro": null
+      },
+      {
+        "tarefa": "mnist_L16",
+        "oculta": false,
+        "acc": 0.9615,
+        "baseline": 0.1135,
+        "referencia": 0.9548,
+        "s_t": 1.008,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.6 0.37 0.021 | ‖grad W‖: 0.26 0.17 0.37",
+        "erro": null
+      },
+      {
+        "tarefa": "mnist_L48",
+        "oculta": false,
+        "acc": 0.1135,
+        "baseline": 0.1135,
+        "referencia": 0.1135,
+        "s_t": 0.0,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.7 0.014 7.7e-06 | ‖grad W‖: 0.0092 0.0066 0.013",
+        "erro": null
+      },
+      {
+        "tarefa": "fashion_L4",
+        "oculta": false,
+        "acc": 0.8715,
+        "baseline": 0.8703,
+        "referencia": 0.8689,
+        "s_t": 1.2,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.5 1 0.15 | ‖grad W‖: 1.3 0.78 1.7",
+        "erro": null
+      },
+      {
+        "tarefa": "fashion_L16",
+        "oculta": false,
+        "acc": 0.861,
+        "baseline": 0.1,
+        "referencia": 0.8507,
+        "s_t": 1.014,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.5 0.36 0.02 | ‖grad W‖: 0.27 0.17 0.33",
+        "erro": null
+      },
+      {
+        "tarefa": "fashion_L48",
+        "oculta": false,
+        "acc": 0.1,
+        "baseline": 0.1,
+        "referencia": 0.1,
+        "s_t": 0.0,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.5 0.012 6.4e-06 | ‖grad W‖: 0.0093 0.006 0.0081",
+        "erro": null
+      },
+      {
+        "tarefa": "cifar10_L4",
+        "oculta": false,
+        "acc": 0.4964,
+        "baseline": 0.4354,
+        "referencia": 0.4509,
+        "s_t": 1.25,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.5 1.1 0.22 | ‖grad W‖: 1.7 0.55 1.3",
+        "erro": null
+      },
+      {
+        "tarefa": "cifar10_L16",
+        "oculta": false,
+        "acc": 0.4543,
+        "baseline": 0.1,
+        "referencia": 0.4135,
+        "s_t": 1.13,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.5 0.19 0.015 | ‖grad W‖: 0.47 0.13 0.3",
+        "erro": null
+      },
+      {
+        "tarefa": "cifar10_L48",
+        "oculta": false,
+        "acc": 0.2312,
+        "baseline": 0.1,
+        "referencia": 0.2361,
+        "s_t": 0.964,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.6 0.008 9.8e-06 | ‖grad W‖: 0.016 0.0043 0.009",
+        "erro": null
+      }
+    ]
+  },
+  {
+    "score": 54.897593259811394,
+    "min_s": 0.0,
+    "mean_s": 0.7842222222222222,
+    "tempo_s": 298.653118000002,
+    "tipo": "leaky_external",
+    "a": 0.08,
+    "modo": "orthogonal",
+    "hidden_gamma": 0.9,
+    "logit_scale": 0.7,
+    "e_f2": 0.5032,
+    "activation_gain": 1.0,
+    "weight_gain": 1.4097096860865024,
+    "media_dataset": {
+      "mnist": 0.6766666666666667,
+      "fashion": 0.6104666666666667,
+      "cifar10": 0.40850000000000003
+    },
+    "media_L": {
+      "4": 0.7773333333333333,
+      "16": 0.7603666666666666,
+      "48": 0.15793333333333334
+    },
+    "acc_tarefas": {
+      "mnist_L4": 0.9644,
+      "mnist_L16": 0.9656,
+      "mnist_L48": 0.1,
+      "fashion_L4": 0.8709,
+      "fashion_L16": 0.8605,
+      "fashion_L48": 0.1,
+      "cifar10_L4": 0.4967,
+      "cifar10_L16": 0.455,
+      "cifar10_L48": 0.2738
+    },
+    "linhas": [
+      {
+        "tarefa": "mnist_L4",
+        "oculta": false,
+        "acc": 0.9644,
+        "baseline": 0.9636,
+        "referencia": 0.9638,
+        "s_t": 0.8,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.7 1.1 0.53 | ‖grad W‖: 1.7 1.1 1.3",
+        "erro": null
+      },
+      {
+        "tarefa": "mnist_L16",
+        "oculta": false,
+        "acc": 0.9656,
+        "baseline": 0.1135,
+        "referencia": 0.9548,
+        "s_t": 1.013,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.6 0.37 0.063 | ‖grad W‖: 0.47 0.32 0.43",
+        "erro": null
+      },
+      {
+        "tarefa": "mnist_L48",
+        "oculta": false,
+        "acc": 0.1,
+        "baseline": 0.1135,
+        "referencia": 0.1135,
+        "s_t": 0.0,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.7 0.014 2.4e-05 | ‖grad W‖: 0.016 0.012 0.013",
+        "erro": null
+      },
+      {
+        "tarefa": "fashion_L4",
+        "oculta": false,
+        "acc": 0.8709,
+        "baseline": 0.8703,
+        "referencia": 0.8689,
+        "s_t": 0.6,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.5 1 0.47 | ‖grad W‖: 2.3 1.5 2",
+        "erro": null
+      },
+      {
+        "tarefa": "fashion_L16",
+        "oculta": false,
+        "acc": 0.8605,
+        "baseline": 0.1,
+        "referencia": 0.8507,
+        "s_t": 1.013,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.5 0.36 0.06 | ‖grad W‖: 0.48 0.33 0.41",
+        "erro": null
+      },
+      {
+        "tarefa": "fashion_L48",
+        "oculta": false,
+        "acc": 0.1,
+        "baseline": 0.1,
+        "referencia": 0.1,
+        "s_t": 0.0,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.5 0.012 2e-05 | ‖grad W‖: 0.016 0.011 0.0081",
+        "erro": null
+      },
+      {
+        "tarefa": "cifar10_L4",
+        "oculta": false,
+        "acc": 0.4967,
+        "baseline": 0.4354,
+        "referencia": 0.4509,
+        "s_t": 1.25,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.5 1.1 0.67 | ‖grad W‖: 3.1 1.2 1.8",
+        "erro": null
+      },
+      {
+        "tarefa": "cifar10_L16",
+        "oculta": false,
+        "acc": 0.455,
+        "baseline": 0.1,
+        "referencia": 0.4135,
+        "s_t": 1.132,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.5 0.19 0.045 | ‖grad W‖: 0.83 0.22 0.29",
+        "erro": null
+      },
+      {
+        "tarefa": "cifar10_L48",
+        "oculta": false,
+        "acc": 0.2738,
+        "baseline": 0.1,
+        "referencia": 0.2361,
+        "s_t": 1.25,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.6 0.008 3e-05 | ‖grad W‖: 0.028 0.0075 0.009",
+        "erro": null
+      }
+    ]
+  },
+  {
+    "score": 53.913066387176514,
+    "min_s": 0.0,
+    "mean_s": 0.7702222222222223,
+    "tempo_s": 334.4569402000052,
+    "tipo": "leaky_external",
+    "a": 0.2,
+    "modo": "orthogonal",
+    "hidden_gamma": 0.9,
+    "logit_scale": 0.6,
+    "e_f2": 0.52,
+    "activation_gain": 1.0,
+    "weight_gain": 1.3867504905630728,
+    "media_dataset": {
+      "mnist": 0.6806,
+      "fashion": 0.6104,
+      "cifar10": 0.4038
+    },
+    "media_L": {
+      "4": 0.7702666666666667,
+      "16": 0.7625666666666667,
+      "48": 0.16196666666666668
+    },
+    "acc_tarefas": {
+      "mnist_L4": 0.9649,
+      "mnist_L16": 0.9634,
+      "mnist_L48": 0.1135,
+      "fashion_L4": 0.8696,
+      "fashion_L16": 0.8616,
+      "fashion_L48": 0.1,
+      "cifar10_L4": 0.4763,
+      "cifar10_L16": 0.4627,
+      "cifar10_L48": 0.2724
+    },
+    "linhas": [
+      {
+        "tarefa": "mnist_L4",
+        "oculta": false,
+        "acc": 0.9649,
+        "baseline": 0.9636,
+        "referencia": 0.9638,
+        "s_t": 1.25,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.6 1.1 0.38 | ‖grad W‖: 1.6 0.93 1.4",
+        "erro": null
+      },
+      {
+        "tarefa": "mnist_L16",
+        "oculta": false,
+        "acc": 0.9634,
+        "baseline": 0.1135,
+        "referencia": 0.9548,
+        "s_t": 1.01,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.6 0.34 0.036 | ‖grad W‖: 0.42 0.27 0.4",
+        "erro": null
+      },
+      {
+        "tarefa": "mnist_L48",
+        "oculta": false,
+        "acc": 0.1135,
+        "baseline": 0.1135,
+        "referencia": 0.1135,
+        "s_t": 0.0,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.6 0.014 4.2e-05 | ‖grad W‖: 0.012 0.0091 0.015",
+        "erro": null
+      },
+      {
+        "tarefa": "fashion_L4",
+        "oculta": false,
+        "acc": 0.8696,
+        "baseline": 0.8703,
+        "referencia": 0.8689,
+        "s_t": 0.0,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.5 0.96 0.33 | ‖grad W‖: 2.2 1.3 2",
+        "erro": null
+      },
+      {
+        "tarefa": "fashion_L16",
+        "oculta": false,
+        "acc": 0.8616,
+        "baseline": 0.1,
+        "referencia": 0.8507,
+        "s_t": 1.015,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.4 0.34 0.034 | ‖grad W‖: 0.44 0.28 0.4",
+        "erro": null
+      },
+      {
+        "tarefa": "fashion_L48",
+        "oculta": false,
+        "acc": 0.1,
+        "baseline": 0.1,
+        "referencia": 0.1,
+        "s_t": 0.0,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.5 0.012 3.4e-05 | ‖grad W‖: 0.012 0.0072 0.0093",
+        "erro": null
+      },
+      {
+        "tarefa": "cifar10_L4",
+        "oculta": false,
+        "acc": 0.4763,
+        "baseline": 0.4354,
+        "referencia": 0.4509,
+        "s_t": 1.25,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.5 1 0.42 | ‖grad W‖: 2.6 0.87 1.4",
+        "erro": null
+      },
+      {
+        "tarefa": "cifar10_L16",
+        "oculta": false,
+        "acc": 0.4627,
+        "baseline": 0.1,
+        "referencia": 0.4135,
+        "s_t": 1.157,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.4 0.2 0.037 | ‖grad W‖: 0.7 0.18 0.31",
+        "erro": null
+      },
+      {
+        "tarefa": "cifar10_L48",
+        "oculta": false,
+        "acc": 0.2724,
+        "baseline": 0.1,
+        "referencia": 0.2361,
+        "s_t": 1.25,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.5 0.0077 2.5e-05 | ‖grad W‖: 0.022 0.0061 0.0088",
+        "erro": null
+      }
+    ]
+  },
+  {
+    "score": 52.42415130138397,
+    "min_s": 0.0,
+    "mean_s": 0.7488888888888889,
+    "tempo_s": 239.2401125000033,
+    "tipo": "leaky_external",
+    "a": 0.15,
+    "modo": "orthogonal",
+    "hidden_gamma": 1.0,
+    "logit_scale": 0.4,
+    "e_f2": 0.51125,
+    "activation_gain": 1.0,
+    "weight_gain": 1.3985672025501312,
+    "media_dataset": {
+      "mnist": 0.6752333333333334,
+      "fashion": 0.6105666666666667,
+      "cifar10": 0.3917333333333333
+    },
+    "media_L": {
+      "4": 0.7683,
+      "16": 0.7607333333333334,
+      "48": 0.1485
+    },
+    "acc_tarefas": {
+      "mnist_L4": 0.9635,
+      "mnist_L16": 0.9622,
+      "mnist_L48": 0.1,
+      "fashion_L4": 0.8726,
+      "fashion_L16": 0.8591,
+      "fashion_L48": 0.1,
+      "cifar10_L4": 0.4688,
+      "cifar10_L16": 0.4609,
+      "cifar10_L48": 0.2455
+    },
+    "linhas": [
+      {
+        "tarefa": "mnist_L4",
+        "oculta": false,
+        "acc": 0.9635,
+        "baseline": 0.9636,
+        "referencia": 0.9638,
+        "s_t": 0.0,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 2 2 0.32 | ‖grad W‖: 1.3 0.75 1.8",
+        "erro": null
+      },
+      {
+        "tarefa": "mnist_L16",
+        "oculta": false,
+        "acc": 0.9622,
+        "baseline": 0.1135,
+        "referencia": 0.9548,
+        "s_t": 1.009,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 2 2.3 0.43 | ‖grad W‖: 1.3 1.2 3.4",
+        "erro": null
+      },
+      {
+        "tarefa": "mnist_L48",
+        "oculta": false,
+        "acc": 0.1,
+        "baseline": 0.1135,
+        "referencia": 0.1135,
+        "s_t": 0.0,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 2 2.6 0.29 | ‖grad W‖: 1.1 1.2 4",
+        "erro": null
+      },
+      {
+        "tarefa": "fashion_L4",
+        "oculta": false,
+        "acc": 0.8726,
+        "baseline": 0.8703,
+        "referencia": 0.8689,
+        "s_t": 1.25,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.9 1.8 0.28 | ‖grad W‖: 1.7 1 2.6",
+        "erro": null
+      },
+      {
+        "tarefa": "fashion_L16",
+        "oculta": false,
+        "acc": 0.8591,
+        "baseline": 0.1,
+        "referencia": 0.8507,
+        "s_t": 1.011,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.8 2.3 0.41 | ‖grad W‖: 1.3 1.2 3.7",
+        "erro": null
+      },
+      {
+        "tarefa": "fashion_L48",
+        "oculta": false,
+        "acc": 0.1,
+        "baseline": 0.1,
+        "referencia": 0.1,
+        "s_t": 0.0,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.9 2.3 0.22 | ‖grad W‖: 1.1 0.87 2.5",
+        "erro": null
+      },
+      {
+        "tarefa": "cifar10_L4",
+        "oculta": false,
+        "acc": 0.4688,
+        "baseline": 0.4354,
+        "referencia": 0.4509,
+        "s_t": 1.25,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.9 2 0.37 | ‖grad W‖: 2.1 0.72 1.9",
+        "erro": null
+      },
+      {
+        "tarefa": "cifar10_L16",
+        "oculta": false,
+        "acc": 0.4609,
+        "baseline": 0.1,
+        "referencia": 0.4135,
+        "s_t": 1.151,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.8 1.3 0.38 | ‖grad W‖: 2.1 0.62 2",
+        "erro": null
+      },
+      {
+        "tarefa": "cifar10_L48",
+        "oculta": false,
+        "acc": 0.2455,
+        "baseline": 0.1,
+        "referencia": 0.2361,
+        "s_t": 1.069,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.9 1.5 0.22 | ‖grad W‖: 1.9 0.73 1.7",
+        "erro": null
+      }
+    ]
+  },
+  {
+    "score": 43.42760860919952,
+    "min_s": 0.0,
+    "mean_s": 0.6204444444444444,
+    "tempo_s": 286.81023809999897,
+    "tipo": "leaky_external",
+    "a": 0.2,
+    "modo": "orthogonal",
+    "hidden_gamma": 0.9,
+    "logit_scale": 0.8,
+    "e_f2": 0.52,
+    "activation_gain": 1.0,
+    "weight_gain": 1.3867504905630728,
+    "media_dataset": {
+      "mnist": 0.6758666666666667,
+      "fashion": 0.612,
+      "cifar10": 0.3968
+    },
+    "media_L": {
+      "4": 0.7671333333333333,
+      "16": 0.7662,
+      "48": 0.15133333333333335
+    },
+    "acc_tarefas": {
+      "mnist_L4": 0.9621,
+      "mnist_L16": 0.9655,
+      "mnist_L48": 0.1,
+      "fashion_L4": 0.8689,
+      "fashion_L16": 0.8671,
+      "fashion_L48": 0.1,
+      "cifar10_L4": 0.4704,
+      "cifar10_L16": 0.466,
+      "cifar10_L48": 0.254
+    },
+    "linhas": [
+      {
+        "tarefa": "mnist_L4",
+        "oculta": false,
+        "acc": 0.9621,
+        "baseline": 0.9636,
+        "referencia": 0.9638,
+        "s_t": 0.0,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.6 1.1 0.67 | ‖grad W‖: 2.1 1.3 1.4",
+        "erro": null
+      },
+      {
+        "tarefa": "mnist_L16",
+        "oculta": false,
+        "acc": 0.9655,
+        "baseline": 0.1135,
+        "referencia": 0.9548,
+        "s_t": 1.013,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.6 0.34 0.063 | ‖grad W‖: 0.56 0.38 0.44",
+        "erro": null
+      },
+      {
+        "tarefa": "mnist_L48",
+        "oculta": false,
+        "acc": 0.1,
+        "baseline": 0.1135,
+        "referencia": 0.1135,
+        "s_t": 0.0,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.6 0.014 7.5e-05 | ‖grad W‖: 0.016 0.012 0.015",
+        "erro": null
+      },
+      {
+        "tarefa": "fashion_L4",
+        "oculta": false,
+        "acc": 0.8689,
+        "baseline": 0.8703,
+        "referencia": 0.8689,
+        "s_t": 0.0,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.5 0.96 0.59 | ‖grad W‖: 2.9 1.8 2.1",
+        "erro": null
+      },
+      {
+        "tarefa": "fashion_L16",
+        "oculta": false,
+        "acc": 0.8671,
+        "baseline": 0.1,
+        "referencia": 0.8507,
+        "s_t": 1.022,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.4 0.34 0.061 | ‖grad W‖: 0.59 0.39 0.44",
+        "erro": null
+      },
+      {
+        "tarefa": "fashion_L48",
+        "oculta": false,
+        "acc": 0.1,
+        "baseline": 0.1,
+        "referencia": 0.1,
+        "s_t": 0.0,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.5 0.012 6e-05 | ‖grad W‖: 0.016 0.0096 0.0093",
+        "erro": null
+      },
+      {
+        "tarefa": "cifar10_L4",
+        "oculta": false,
+        "acc": 0.4704,
+        "baseline": 0.4354,
+        "referencia": 0.4509,
+        "s_t": 1.25,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.5 1 0.74 | ‖grad W‖: 3.6 1.3 1.6",
+        "erro": null
+      },
+      {
+        "tarefa": "cifar10_L16",
+        "oculta": false,
+        "acc": 0.466,
+        "baseline": 0.1,
+        "referencia": 0.4135,
+        "s_t": 1.167,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.4 0.2 0.066 | ‖grad W‖: 0.93 0.24 0.31",
+        "erro": null
+      },
+      {
+        "tarefa": "cifar10_L48",
+        "oculta": false,
+        "acc": 0.254,
+        "baseline": 0.1,
+        "referencia": 0.2361,
+        "s_t": 1.132,
+        "raio_x": "var(pré-ativ) 1ª/meio/última: 1.5 0.0077 4.5e-05 | ‖grad W‖: 0.029 0.0082 0.0088",
+        "erro": null
+      }
+    ]
+  }
+]
